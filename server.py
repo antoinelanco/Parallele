@@ -2,7 +2,7 @@ import sys
 import time
 import RPi.GPIO as GPIO
 
-gplist = [1,2,3,4,5,6,7,8,9,10]
+gplist = [1,2,3,4,5,6,7,8,20,26]
 GPIO.setmode(GPIO.BCM)
 #init data
 i=0
@@ -25,9 +25,12 @@ def Parallele():
     while count<len(text):
         data = charToArrayBin(text[count])
         if GPIO.input(gplist[9]):
+
             a=1
-            while a<8:
-                GPIO.ouput(gplist[a-1],data[a])
+            print a
+            while a<9:
+                print a
+                GPIO.output(gplist[a-1],int (data[a]))
                 a=a+1
             GPIO.output(gplist[8],GPIO.HIGH)
             count=count+1
