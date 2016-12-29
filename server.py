@@ -1,10 +1,6 @@
-import socket, sys
-import time
 import sys
+import time
 import RPi.GPIO as GPIO
-import urllib
-import threading
-import os as os
 
 gplist = [1,2,3,4,5,6,7,8,9,10]
 GPIO.setmode(GPIO.BCM)
